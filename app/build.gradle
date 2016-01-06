@@ -38,6 +38,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile 'org.mongodb:mongo-java-driver:3.0.3'
+    compile 'io.realm:realm-android:0.87.1'
+
 }
 
 apt {

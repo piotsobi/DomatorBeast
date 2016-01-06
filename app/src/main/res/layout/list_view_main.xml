@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingTop="6dp"
+    android:paddingRight="15dp"
+    android:paddingBottom="6dp">
+
+
+    <ImageView
+        android:id="@+id/imageList"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:src="@drawable/baner" />
+
+    <TextView
+        android:id="@+id/textGroupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="New Text" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/buttonMore"
+            style="@style/RtlOverlay.Widget.AppCompat.ActionButton.Overflow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="ELOSZKA" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textNoShowed"
+            android:layout_marginLeft="93dp"
+            android:layout_marginStart="93dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

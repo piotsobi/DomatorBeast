@@ -28,9 +28,27 @@ public class ExData {
         this.steps = steps;
     }
 
-    public int id;
+    public String id;
     public String opis;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String level;
+    public String name;
     public String steps;
 
 }

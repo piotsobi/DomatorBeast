@@ -29,7 +29,7 @@
         android:textSize="20sp"
         android:background="@color/primaryColor"
         android:textColor="@color/textPrimary"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:text="Pause"
         android:id="@+id/btnPause"
@@ -44,15 +44,15 @@
         android:background="@color/primaryColor"
         android:textColor="@color/textPrimary"
 
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:text="Nastepne"
         android:id="@+id/btnNext"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="60dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginEnd="38dp"
         android:layout_marginBottom="20dp"
         />
 

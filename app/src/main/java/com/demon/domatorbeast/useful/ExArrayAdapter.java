@@ -35,18 +35,18 @@ public class ExArrayAdapter extends ArrayAdapter<String> {
         LayoutInflater mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View mView = mLayoutInflater.inflate(R.layout.list_view_main,parent,false);
         ImageView mImageView = (ImageView) mView.findViewById(R.id.imageList);
-        TextView mTextView = (TextView) mView.findViewById(R.id.textGroupName);
-        TextView mTextViewGone = (TextView) mView.findViewById(R.id.textNoShowed);
-        Button mButton = (Button) mView.findViewById(R.id.buttonMore);
-        mTextView.setText(names[position]);
-        mTextViewGone.setText("Opisby był tego wlasnie elo elo 3 dwa zero " + names[position]);
+        //TextView mTextView = (TextView) mView.findViewById(R.id.textGroupName);
+        //TextView mTextViewGone = (TextView) mView.findViewById(R.id.textNoShowed);
+        //Button mButton = (Button) mView.findViewById(R.id.buttonMore);
+        //mTextView.setText(names[position]);
+        //mTextViewGone.setText("Opisby był tego wlasnie elo elo 3 dwa zero " + names[position]);
         //String name = names[position];
-        mButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext, names[position],Toast.LENGTH_SHORT).show();
-            }
-        });
+        //mButton.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View v) {
+        //        Toast.makeText(mContext, names[position],Toast.LENGTH_SHORT).show();
+        //    }
+        //});
         return mView;
         //return super.getView(position, convertView, parent);
     }

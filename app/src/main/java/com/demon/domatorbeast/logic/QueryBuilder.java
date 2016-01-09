@@ -1,5 +1,10 @@
 package com.demon.domatorbeast.logic;
 
+import android.util.Log;
+
+import com.demon.domatorbeast.data.Exercise;
+import com.mongodb.util.JSON;
+
 /**
  * Created by Piotr on 2016-01-04.
  */
@@ -82,10 +87,16 @@ public class QueryBuilder {
 
     public String setContactData(ExData contact) {
         return String.format("{ \"$set\" : "
-                        + "{\"opis\" : \"%s\", "
+                        + "{\"id\" : \"%s\", "
+                        + "\"opis\" : \"%s\", "
                         + "\"level\" : \"%s\", "
+                        + "\"name\" : \"%s\", "
                         + "\"steps\" : \"%s\"}" + "}",
+                contact.getId(),
                 contact.getOpis(),
-                contact.getLevel(), contact.getSteps());
+                contact.getLevel(), contact.getName(),contact.getSteps());
+
     }
+
+
 }

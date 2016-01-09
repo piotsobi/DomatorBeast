@@ -3,6 +3,7 @@
     package="com.demon.domatorbeast">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,9 +28,13 @@
         <activity android:name=".useful.ProgressBarDialog_">
 
         </activity>
+        <activity android:name=".modules.ExerciseDescriptionActivity_">
+
+        </activity>
         <activity android:name=".modules.ExerciseList_">
 
         </activity>
+
     </application>
 
 </manifest>

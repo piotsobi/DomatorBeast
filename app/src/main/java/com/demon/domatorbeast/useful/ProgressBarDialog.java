@@ -24,16 +24,18 @@ public class ProgressBarDialog extends Dialog {
 
     public Context mContext;
     public long timerInMillis = 1000 * 5;
+    private String nextExercise;
     //@ViewById
     TextView textDialogTimer;
     //@ViewById
     ProgressBar progresBarTimer;
 
 
-    public ProgressBarDialog(Context context) {
+    public ProgressBarDialog(Context context, long seconds, String next) {
         super(context);
-
+        this.timerInMillis = seconds *1000;
         this.mContext = context;
+        this.nextExercise = next;
     }
 
     @Override

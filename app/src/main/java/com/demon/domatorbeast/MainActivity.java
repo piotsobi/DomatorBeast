@@ -2,11 +2,15 @@ package com.demon.domatorbeast;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
@@ -22,6 +26,8 @@ import org.androidannotations.annotations.ViewById;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -46,10 +52,6 @@ public class MainActivity extends AppCompatActivity {
     void btnExClicked(){
         mIntent = new Intent(this, ExerciseList_.class);
         startActivity(mIntent);
-        Realm mRealm = Realm.getDefaultInstance();
-        Exercise mExercise = mRealm.where(Exercise.class).equalTo("id",2).findFirst();
-        Toast.makeText(this,"KURWA",Toast.LENGTH_SHORT).show();
-        mRealm.close();
     }
 
     @Override
@@ -70,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Click(R.id.btnExit)
     void btnExitClicked(){
-
-        Toast.makeText(this,"BACK PRESS PLS", Toast.LENGTH_SHORT).show();
+        onBackPressed();
     }
 
     @Override
@@ -79,6 +80,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         mPref = getSharedPreferences("com.demon.domatorbeast",MODE_PRIVATE);
+
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "com.demon.domatorbeast",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.e("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
     }
 
     @AfterViews

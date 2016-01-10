@@ -8,18 +8,13 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp">
 
-    <ImageView
-        android:id="@+id/imageList"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_search" />
+
 
     <TextView
         android:id="@+id/textGroupName"
         style="@style/Base.TextAppearance.AppCompat.Large"
         android:layout_width="fill_parent"
-        android:layout_height="84dp"
-        android:paddingLeft="54dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
         android:text="Mieśnie ud pośladków i czego tam jeszcze" />
 </LinearLayout>

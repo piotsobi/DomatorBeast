@@ -15,6 +15,8 @@ import android.view.MenuItem;
 
 import com.demon.domatorbeast.R;
 import com.demon.domatorbeast.useful.ZoomOutPageTransformer;
+import com.viewpagerindicator.CirclePageIndicator;
+import com.viewpagerindicator.TitlePageIndicator;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
@@ -58,6 +60,8 @@ public class ExerciseDescriptionActivity extends AppCompatActivity {
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
         mPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        CirclePageIndicator titlePageIndicator = (CirclePageIndicator) findViewById(R.id.titles);
+        titlePageIndicator.setViewPager(mPager);
         setSupportActionBar(app_bar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //setActionBar(app_bar);

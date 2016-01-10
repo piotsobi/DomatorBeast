@@ -34,7 +34,7 @@ public class ExArrayAdapter extends ArrayAdapter<String> {
 
         LayoutInflater mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View mView = mLayoutInflater.inflate(R.layout.list_view_main,parent,false);
-        ImageView mImageView = (ImageView) mView.findViewById(R.id.imageList);
+        //ImageView mImageView = (ImageView) mView.findViewById(R.id.imageList);
         TextView mTextView = (TextView) mView.findViewById(R.id.textGroupName);
         switch(names[position]){
             case "abs":

@@ -10,19 +10,22 @@
         android:layout_below="@+id/app_bar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
 
-        <ImageView
-            android:layout_width="164dp"
-            android:layout_height="164dp"
-            android:id="@+id/imageView2"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/imggym"
-            android:paddingRight="20dp"
-            android:paddingEnd="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="34dp" />
+        <VideoView
+            android:id="@+id/videoViewTraining"
+            android:layout_width="fill_parent"
+
+            android:layout_gravity="center_horizontal"
+            android:layout_height="250dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp" />
     </LinearLayout>
 
     <Button
@@ -32,6 +35,7 @@
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:text="Pause"
+        android:visibility="invisible"
         android:id="@+id/btnPause"
         android:layout_marginLeft="38dp"
         android:layout_marginStart="38dp"
@@ -59,60 +63,52 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Seria"
         android:id="@+id/textView2"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignRight="@+id/btnPause"
-        android:layout_alignEnd="@+id/btnPause"
-        android:layout_marginTop="48dp" />
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/textExName"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Liczba powtórzeń:"
         android:id="@+id/textView3"
+        android:layout_marginTop="31dp"
         android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="30dp" />
+        android:layout_alignLeft="@+id/btnPause"
+        android:layout_alignStart="@+id/btnPause" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Small Text"
         android:id="@+id/textSeries"
         android:layout_alignTop="@+id/textView2"
         android:layout_alignLeft="@+id/btnNext"
-        android:layout_alignStart="@+id/btnNext" />
+        android:layout_alignStart="@+id/btnNext"
+        android:paddingLeft="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Small Text"
         android:id="@+id/textRepet"
         android:layout_alignTop="@+id/textView3"
         android:layout_alignLeft="@+id/textSeries"
-        android:layout_alignStart="@+id/textSeries" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView"
-        android:layout_above="@+id/btnPause"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="44dp"
-        android:gravity="center_horizontal" />
+        android:layout_alignStart="@+id/textSeries"
+        android:paddingLeft="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Nazwa ćwiczenia"
         android:id="@+id/textExName"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true" />

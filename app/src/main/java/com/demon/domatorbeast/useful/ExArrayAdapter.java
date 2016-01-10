@@ -35,7 +35,22 @@ public class ExArrayAdapter extends ArrayAdapter<String> {
         LayoutInflater mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View mView = mLayoutInflater.inflate(R.layout.list_view_main,parent,false);
         ImageView mImageView = (ImageView) mView.findViewById(R.id.imageList);
-        //TextView mTextView = (TextView) mView.findViewById(R.id.textGroupName);
+        TextView mTextView = (TextView) mView.findViewById(R.id.textGroupName);
+        switch(names[position]){
+            case "abs":
+                mTextView.setText(R.string.abs);
+                break;
+            case "uda":
+                mTextView.setText(R.string.uda);
+                break;
+            case "plecy":
+                mTextView.setText(R.string.plecy);
+                break;
+            case "lapy":
+                mTextView.setText(R.string.lapy);
+                break;
+
+        }
         //TextView mTextViewGone = (TextView) mView.findViewById(R.id.textNoShowed);
         //Button mButton = (Button) mView.findViewById(R.id.buttonMore);
         //mTextView.setText(names[position]);

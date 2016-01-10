@@ -33,7 +33,8 @@ import org.androidannotations.annotations.ViewById;
 @EActivity(R.layout.exercise_list)
 public class ExerciseList extends AppCompatActivity {
 
-    static final String[] NAMES = new String[]{"ABBA","KLATA","PLECY","BARKI","tested","testing"};
+    static final String[] NAMES = new String[]{"abs","uda","plecy","lapy"};
+    //static final int[] STRINGS = new int[]{R.string.abs, R.string.uda, R.string.plecy,R.string.lapy};
 
     @ViewById
     ListView listView;
@@ -56,6 +57,8 @@ public class ExerciseList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent mIntent = new Intent(getApplicationContext(), ExerciseDescriptionActivity_.class);
+                mIntent.putExtra("position",position);
+
                 startActivity(mIntent);
                 Toast.makeText(ExerciseList.this, NAMES[position], Toast.LENGTH_SHORT).show();
             }

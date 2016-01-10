@@ -1,7 +1,6 @@
 package com.demon.domatorbeast.data;
 
 import io.realm.RealmObject;
-import io.realm.annotations.Required;
 
 /**
  * Created by Piotr on 2016-01-06.
@@ -9,8 +8,8 @@ import io.realm.annotations.Required;
 public class Exercise extends RealmObject {
     //@Required
     private int id;
-    private String opis;
-    private String level;
+    private String description;
+    private String series;
     private String name;
 
     public String getName() {
@@ -31,20 +30,20 @@ public class Exercise extends RealmObject {
         this.id = id;
     }
 
-    public String getOpis() {
-        return opis;
+    public String getDescription() {
+        return description;
     }
 
-    public void setOpis(String opis) {
-        this.opis = opis;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getLevel() {
-        return level;
+    public String getSeries() {
+        return series;
     }
 
-    public void setLevel(String level) {
-        this.level = level;
+    public void setSeries(String series) {
+        this.series = series;
     }
 
     public int getSteps() {

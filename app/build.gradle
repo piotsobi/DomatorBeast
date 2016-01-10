@@ -40,6 +40,7 @@ dependencies {
     compile "org.androidannotations:androidannotations-api:$AAVersion"
     compile 'org.mongodb:mongo-java-driver:3.0.3'
     compile 'io.realm:realm-android:0.87.1'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
 
 }
 

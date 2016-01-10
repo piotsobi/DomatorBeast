@@ -1,6 +1,5 @@
 package com.demon.domatorbeast;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
@@ -8,18 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
 import com.demon.domatorbeast.data.Exercise;
-import com.demon.domatorbeast.logic.ExData;
 import com.demon.domatorbeast.logic.MongoReader;
-import com.demon.domatorbeast.logic.MongoSender;
-import com.demon.domatorbeast.logic.QueryBuilder;
-import com.demon.domatorbeast.modules.ExcerciseActivity_;
 import com.demon.domatorbeast.modules.ExerciseList_;
-import com.demon.domatorbeast.modules.TrainingActivity;
 import com.demon.domatorbeast.modules.TrainingActivity_;
 
 import org.androidannotations.annotations.AfterViews;
@@ -27,12 +20,11 @@ import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 @EActivity(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
@@ -54,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     void btnExClicked(){
         mIntent = new Intent(this, ExerciseList_.class);
         startActivity(mIntent);
-        Realm mRealm = Realm.getInstance(getApplicationContext());
+        Realm mRealm = Realm.getDefaultInstance();
         Exercise mExercise = mRealm.where(Exercise.class).equalTo("id",2).findFirst();
         Toast.makeText(this,"KURWA",Toast.LENGTH_SHORT).show();
         mRealm.close();
@@ -73,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Click(R.id.btnPorady)
     void btnPoradyClicked(){
         //TODO Porady
-
+        new MongoReader(getApplicationContext()).execute();
     }
 
     @Click(R.id.btnExit)
@@ -92,12 +84,15 @@ public class MainActivity extends AppCompatActivity {
     @AfterViews
     void init(){
         setSupportActionBar(app_bar);
+        //getSupportActionBar().setIcon(R.drawable.ic_launcher);
+        RealmConfiguration mRealmConfig = new RealmConfiguration.Builder(getApplicationContext()).build();
+        Realm.setDefaultConfiguration(mRealmConfig);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);
+        //getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
     @Override

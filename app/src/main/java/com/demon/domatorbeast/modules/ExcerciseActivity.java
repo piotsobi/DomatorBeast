@@ -59,7 +59,7 @@ public class ExcerciseActivity extends Activity implements MediaPlayer.OnComplet
         mMediaPlayer.start();
 
         //mVideoView.setVideoURI(Uri.parse("android.resource//"+getPackageName()+"/"+R.raw.togifa));
-        Log.e("CONTENT", "android.resource//" + getPackageName() + "/" + R.raw.togifa);
+        //Log.e("CONTENT", "android.resource//" + getPackageName() + "/" + R.raw.togifa);
         mVideoView.setOnCompletionListener(this);
         //mVideoView.start();
         //TODO Inicjalizacja z bazy obrazka/gifu i opisu; mongoDB

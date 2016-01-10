@@ -1,6 +1,7 @@
 package com.demon.domatorbeast.modules;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -28,7 +29,7 @@ public class ExerciseDescriptionActivity extends AppCompatActivity {
      * The number of pages (wizard steps) to show in this demo.
      */
     private static final int NUM_PAGES = 5;
-
+    private static int position;
     /**
      * The pager widget, which handles animation and allows swiping horizontally to access previous
      * and next wizard steps.
@@ -60,6 +61,9 @@ public class ExerciseDescriptionActivity extends AppCompatActivity {
         setSupportActionBar(app_bar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //setActionBar(app_bar);
+        Intent mIntent = getIntent();
+        position = mIntent.getIntExtra("position",0);
+
     }
 
     @Override
@@ -89,7 +93,7 @@ public class ExerciseDescriptionActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new ExerciseDescriptionFragment();
+            return ExerciseDescriptionFragment.newInstance(position + ExerciseDescriptionActivity.position*10);
         }
 
 

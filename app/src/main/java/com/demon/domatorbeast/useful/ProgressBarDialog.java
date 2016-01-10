@@ -23,7 +23,7 @@ import org.androidannotations.annotations.ViewById;
 public class ProgressBarDialog extends Dialog {
 
     public Context mContext;
-    public long timerInMillis = 1000 * 2;
+    public long timerInMillis = 1000 * 5;
     //@ViewById
     TextView textDialogTimer;
     //@ViewById
@@ -48,16 +48,19 @@ public class ProgressBarDialog extends Dialog {
 
     //@AfterViews
     void init(){
-        CountDownTimer mCountDown = new CountDownTimer(timerInMillis,500) {
+        progresBarTimer.setMax((int)timerInMillis);
+        CountDownTimer mCountDown = new CountDownTimer(timerInMillis,50) {
             @Override
             public void onTick(long millisUntilFinished) {
-                long seconds = millisUntilFinished/1000;
+                //long seconds = millisUntilFinished/1000;
+
                 //int setBar = timerInMillis - ((int)(seconds)/60*100);
-                progresBarTimer.setProgress((int) seconds);
+                progresBarTimer.setProgress((int) (timerInMillis - millisUntilFinished));
             }
 
             @Override
             public void onFinish() {
+                progresBarTimer.setProgress(progresBarTimer.getMax());
                 dismiss();
             }
         }.start();

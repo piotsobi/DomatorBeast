@@ -2,17 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="16dp"
     android:paddingLeft="16dp"
-    android:paddingTop="6dp"
     android:paddingRight="16dp"
-    android:paddingBottom="6dp">
-
+    android:paddingTop="16dp">
 
     <ImageView
         android:id="@+id/imageList"
-        android:layout_width="fill_parent"
-        android:layout_height="120dp"
-        android:src="@drawable/baner" />
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_search" />
 
+    <TextView
+        android:id="@+id/textGroupName"
+        style="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_width="fill_parent"
+        android:layout_height="84dp"
+        android:paddingLeft="54dp"
+        android:text="Mieśnie ud pośladków i czego tam jeszcze" />
 </LinearLayout>

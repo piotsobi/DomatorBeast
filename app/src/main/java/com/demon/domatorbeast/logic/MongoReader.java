@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.util.JsonReader;
 import android.util.Log;
 
-import com.demon.domatorbeast.MainActivity;
 import com.demon.domatorbeast.data.Exercise;
 
 import java.io.BufferedReader;
@@ -39,22 +38,20 @@ public class MongoReader extends AsyncTask<Void, Void, Void> {
             String key = reader.nextName();
             if (key.equals("id")) {
                 mExercise.setId(Integer.parseInt(reader.nextString()));
-            } else if (key.equals("opis")) {
-                mExercise.setOpis(reader.nextString());
-            } else if (key.equals("level")) {
-                mExercise.setLevel(reader.nextString());
-            } else if (key.equals("steps")) {
-                mExercise.setSteps(Integer.parseInt(reader.nextString()));
-            } else if (key.equals("nazwa")) {
+            } else if (key.equals("description")) {
+                mExercise.setDescription(reader.nextString());
+            } else if (key.equals("name")) {
                 mExercise.setName(reader.nextString());
+            }else if (key.equals("series")) {
+                mExercise.setSeries(reader.nextString());
             } else {
                 reader.skipValue();
             }
         }
         reader.endObject();
-        Log.e("EXERCISE", mExercise.getLevel());
+        Log.e("EXERCISE", mExercise.getSeries());
         //Realm mRealm = Realm.getDefaultInstance();
-        Realm mRealm = Realm.getInstance(context);
+        Realm mRealm = Realm.getDefaultInstance();
 
         mRealm.beginTransaction();
         mRealm.copyToRealm(mExercise);
@@ -97,7 +94,7 @@ public class MongoReader extends AsyncTask<Void, Void, Void> {
                             s = "{ " + s;
                             mJsonReader = new JsonReader(new StringReader(s));
                             jsonRead(mJsonReader);
-                            //Log.e("STRING",s);
+                            Log.e("STRING",s);
                         }
 
 
